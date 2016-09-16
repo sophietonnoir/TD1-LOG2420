@@ -1,51 +1,43 @@
+<!DOCKTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Language" content="fr-ca">
-<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><style></style>
-<script src="map-html-to-json.js"></script>
-<link rel="STYLESHEET" href="../../global.css" type="text/css">
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+
+<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="map-html-to-json.js"></script>
+
+<!-- <link rel="STYLESHEET" href="test.css" type="text/css"> -->
+<link rel="shortcut icon" href="http://www.polymtl.ca/profiles/portail/themes/custom/bueno/favicon.ico" type="image/vnd.microsoft.icon">
+
+
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="../../angular.min.js"></script>
+
 <style type="text/css">
 	.msg {font-weight:bold;}
 	li {margin:0px; padding: 0px; border:0px;}
 	ol,ul {margin:0px; margin-left:4px; padding: 0px; border:0px;}
 </style>
+<link rel="STYLESHEET" href="test.css" type="text/css">
 
 
 
 
-<link rel="STYLESHEET" href="../../global.css" type="text/css">
-<link rel="shortcut icon" href="http://www.polymtl.ca/profiles/portail/themes/custom/bueno/favicon.ico" type="image/vnd.microsoft.icon">
 <title>LOG2420 - Détails des séances</title>
 </head>
-<body bgcolor="WHITE" data-ext-installed="true">
-	<div class="principal">
+<body>
+	<div class="principal" >
 		<div class="top">
-				<a href="http://www.polymtl.ca/"><img alt="LOG2420" ismap="" border="0" src="../../Images/logo03.gif"></a>
-				<h2 class="inline">LOG2420, Analyse et conception d'interfaces utilisateur</h2>
-				</br>
-				<h3 class="inline1">Automne 2016</h3>
-				<h4 class="inline2"><a href="/log2420/Seances/20163/index.php?&amp;formatimp=o"><img border="0" src="../../Images/printer.png">format impression</a></h4>
+				<h1><a href="http://www.polymtl.ca/"><img alt="LOG2420" ismap="" border="0" src="Images/logo03.gif"></a> </h1>
+                                <div class="texte">				
+					<h3 class="txt1">LOG2420, Analyse et conception d'interfaces utilisateur</h3>				
+					<h4 class="txt2"> Automne 2016 </h4>
+				</div>
+				<div class="print" align="right" valign="center"> <a href="/log2420/Seances/20163/index.php?&amp;formatimp=o"><img border="0" src="Images/printer.png"> <br> format impression</a> </div>
 		</div>
-		<script type="text/javascript">
-			app.controller("menuCtrl", function($scope, $http, $sce) {
-					$http.get("menu.json").then(function(response) {
-						$scope.menus = angular.forEach(response.data, function (menu, index, tableau) {
-							tableau[index] = angular.forEach(seance, function(valeur, cle, tableau) {
-								tableau[cle] = $sce.trustAsHtml(valeur);
-							});
-						});
-					});
-				});
-		</script>
-		<nav ng-app="">
-			<table ng-controller="menuCtrl">
-				<tr ng-repeat="val in Navigation">
-					<td>{{val.data}}
-					</td>
-				</tr>	
-			</table>
-		</nav>	
 	</div>
+
+
 </body>
+</html>
