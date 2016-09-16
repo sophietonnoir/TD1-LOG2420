@@ -1,0 +1,43 @@
+
+.top{
+	background-image:url("background2.jpg");
+	height:75px;
+	
+}
+
+h1{
+	display:inline;
+}
+
+.top .texte{
+	display:inline;
+	position:absolute;
+	height:50px;
+	top:25px;
+	color:midnightblue;
+	font-family:Verdana,Arial,sans-serif;
+}
+
+.top .texte .txt1{
+	display:block;
+	margin:0px;
+	padding:0px;
+}
+
+
+.top .texte .txt2{
+	display:block;
+	margin:0px;
+	padding:0px;
+}
+
+
+.top .print{
+	display:inline;
+	position:absolute;
+	top:0;
+	width:65px;
+	height:75px;
+	left:625px;
+}
+
