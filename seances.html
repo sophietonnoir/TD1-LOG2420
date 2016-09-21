@@ -1,43 +1,148 @@
-<!DOCKTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Language" content="fr-ca">
-<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <title>LOG2420 - Détails des séances</title>
+        <script src="seances.js"></script>
+        <link rel="stylesheet" type="text/css" href="seances.css"/>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    </head>
 
-<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="map-html-to-json.js"></script>
+    <body>
 
-<!-- <link rel="STYLESHEET" href="test.css" type="text/css"> -->
-<link rel="shortcut icon" href="http://www.polymtl.ca/profiles/portail/themes/custom/bueno/favicon.ico" type="image/vnd.microsoft.icon">
+        <header>
 
+            <div id="HeaderConteneur">
 
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="../../angular.min.js"></script>
+                <div>
+                    <a href="http://www.polymtl.ca/">
+                        <img src="http://www.groupes.polymtl.ca/log2420/Images/logo03.gif" class="logo" alt="LOG2420">
+                    </a>
+                </div>
 
-<style type="text/css">
-	.msg {font-weight:bold;}
-	li {margin:0px; padding: 0px; border:0px;}
-	ol,ul {margin:0px; margin-left:4px; padding: 0px; border:0px;}
-</style>
-<link rel="STYLESHEET" href="test.css" type="text/css">
+                <div class="description">
+                    <a class="description"> LOG2420,  Analyse et conception d'interfaces utilisateur</a>
+                    <br>
+                    <a class="annee">
+                        Automne 2016
+                    </a>
+                </div>
 
+                <div class="printer">
+                    <img src="http://www.groupes.polymtl.ca/log2420/Images/printer.png">
+                    <a href="">format impression</a>
+                </div>
 
+            </div>
 
+        </header>
 
-<title>LOG2420 - Détails des séances</title>
-</head>
-<body>
-	<div class="principal" >
-		<div class="top">
-				<h1><a href="http://www.polymtl.ca/"><img alt="LOG2420" ismap="" border="0" src="Images/logo03.gif"></a> </h1>
-                                <div class="texte">				
-					<h3 class="txt1">LOG2420, Analyse et conception d'interfaces utilisateur</h3>				
-					<h4 class="txt2"> Automne 2016 </h4>
-				</div>
-				<div class="print" align="right" valign="center"> <a href="/log2420/Seances/20163/index.php?&amp;formatimp=o"><img border="0" src="Images/printer.png"> <br> format impression</a> </div>
-		</div>
-	</div>
+        <img src="http://www.groupes.polymtl.ca/log2420/Images/border.png" class="border">
 
+        <div id="conteneur" ng-app="menuApp" ng-controller="menuController">
 
-</body>
+            <div class="menu">
+
+                <table width="100%">
+
+                    <tbody>
+
+                    <tr ng-repeat="menu in menuList">
+                        <td class="link-menu" ng-if="menu.Lien">
+                            <a class="link-menu-{{menu.Niveau}}" href="{{menu.Lien}}">{{menu.Nom}}</a>
+                        </td>
+                        <td class="unlink-menu" ng-if="!menu.Lien">
+                            <a class="unlink-menu">{{menu.Nom}}</a>
+                        </td>
+                    </tr>
+                    
+                    </tbody>
+
+                </table>
+
+                <div class="printer printerMenu">
+                    <a href="">
+                    <img src="http://www.groupes.polymtl.ca/log2420/Images/printer.png">
+                    format impression</a>
+                </div>
+
+            </div>
+
+            <div class="details">
+                <h1>Détails des séances</h1>
+
+                <p>
+                    <a href="">Version</a>
+                    <a> pour les chargés de cours.</a>
+
+                </p>
+
+                <p class="bold">Attention: cette page et son contenu seront modifiés en cours de trimestre selon les besoins. Attendez à la semaine correspondante pour imprimer les transparents!<br> Dernière mise à jour : 29 août.</p> 
+
+                <p> Le détail de chaque séance de cours est fourni semaine par semaine.<br> 
+
+                    <a href="http:#1">1</a>
+                    <a href="http:#2">2</a>
+                    <a href="http:#3">3</a>
+                    <a href="http:#4">4</a>
+                    <a href="http:#5">5</a>
+                    <a href="http:#6">6</a>
+                    <a href="http:#7">7</a>
+                    <a href="http:#8">8</a>
+                    <a href="http:#9">9</a>
+                    <a href="http:#10">10</a>
+                    <a href="http:#11">11</a>
+                    <a href="http:#12">12</a>
+                    <a href="http:#13">13</a>
+                    <a href="http:#14">14</a>
+
+                    <br>
+                </p>
+                <div class="seances">
+
+                    <table width="100%">
+
+                        <tbody>
+                        <tr>
+                            <th colspan="2">Semaine</th>
+                            <th>Transparents</th>
+                            <th>Documents</th>
+                            <th>Évaluation</th>
+                            <!--<th>Laboratoire</th>-->
+                        </tr>
+                        <tr ng-repeat="seance in seances" class="row{{$index+1}}">
+
+                            <td class="right">
+                                {{$index + 1}}
+                            </td>
+
+                            <td ng-bind-html="seance.date" class="right">
+
+                            </td>
+                            <td ng-bind-html="seance.transparents" ng-if="$index+1 != 8 && $index+1 != 14">
+
+                            </td>
+                            <td class="document" ng-bind-html="seance.documents" ng-if="$index+1 != 8 && $index+1 != 14">
+
+                            </td>
+                            <td colspan="2" class="document center" ng-bind-html="seance.documents" ng-if="$index+1 == 8 || $index+1 == 14">
+
+                            </td>
+                            <td ng-bind-html="seance.evaluations">
+
+                            </td>
+                            <!--<td ng-bind-html="seance.laboratoire">
+
+                            </td>-->
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+                    <p class="bottom"></p>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
