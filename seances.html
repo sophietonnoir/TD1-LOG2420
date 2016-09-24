@@ -49,11 +49,14 @@
                     <tbody>
 
                     <tr ng-repeat="menu in menuList">
-                        <td class="link-menu" ng-if="menu.Lien">
+                        <td class="link-menu" ng-if="menu.Lien && menu.Nom != 'Séances'">
                             <a class="link-menu-{{menu.Niveau}}" href="{{menu.Lien}}">{{menu.Nom}}</a>
                         </td>
                         <td class="unlink-menu" ng-if="!menu.Lien">
                             <a class="unlink-menu">{{menu.Nom}}</a>
+                        </td>
+			<td class="unlink-menu2" ng-if="menu.Nom == 'Séances'">
+                             <a class="link-menu-exception" href="{{menu.Lien}}">{{menu.Nom}}</a>
                         </td>
                     </tr>
                     

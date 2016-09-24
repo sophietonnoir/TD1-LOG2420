@@ -141,12 +141,29 @@ table {
     color: midnightblue;
 }
 
+.link-menu-exception {
+
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+}
+
 td.unlink-menu {
 
    background-color: #a9c0d3;
 }
 
+td.unlink-menu2 {
+   background-color: midnightblue;
+   color: white;
+}
+
 a.unlink-menu {
+
+    margin-left: 5px;
+}
+
+a.unlink-menu2 {
 
     margin-left: 5px;
 }
