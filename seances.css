@@ -145,7 +145,7 @@ table {
 
     margin-left: 5px;
     text-decoration: none;
-    color: white;
+    color: #dae4ed;
 }
 
 td.unlink-menu {
@@ -154,8 +154,8 @@ td.unlink-menu {
 }
 
 td.unlink-menu2 {
-   background-color: midnightblue;
-   color: white;
+   background-color: #094f93;
+   color: #dae4ed;
 }
 
 a.unlink-menu {
